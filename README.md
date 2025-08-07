@@ -134,7 +134,7 @@ nvm use 16
 ```bash
 npm install --legacy-peer-deps
 ```
-###🧑‍💻 3. Create MongoDB Admin and Application User
+### 🧑‍💻 3. Create MongoDB Admin and Application User
 ```bash
 use trudesk
 db.createUser({
@@ -145,7 +145,7 @@ db.createUser({
   ]
 })
 ```
-### 🚀 5. Start the App with PM2
+### 🚀 4. Start the App with PM2
 ```bash
 npm install -g pm2
 pm2 start app.js --name trudesk
