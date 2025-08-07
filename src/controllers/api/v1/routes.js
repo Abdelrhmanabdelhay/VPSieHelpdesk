@@ -13,6 +13,7 @@
  */
 
 const packagejson = require('../../../../package')
+const attachmentsPerMonth = require('./reports')
 const apiReports = require('./reports')
 const apiTickets = require('./tickets')
 
@@ -57,8 +58,6 @@ module.exports = function (middleware, router, controllers) {
   router.post('/api/v1/tickets/priority/:id/delete', apiv1, isAdmin, apiCtrl.tickets.deletePriority)
   router.get('/api/v1/tickets/priorities', apiv1, apiCtrl.tickets.getPriorities)
   router.put('/api/v1/tickets/priority/:id', apiv1, isAdmin, apiCtrl.tickets.updatePriority)
-  //get average close time by month
-  router.get("/api/v1/tickets/getaverageclosetimebymonth", apiv1,apiTickets.s)
 
   router.post('/api/v1/tickets/status/create', apiv1, isAdmin, apiCtrl.tickets.createStatus)
   router.get('/api/v1/tickets/status', apiv1, apiCtrl.tickets.getStatus)
@@ -85,6 +84,8 @@ module.exports = function (middleware, router, controllers) {
     apiCtrl.tickets.getCountByGroup
   )
   router.get('/api/v1/tickets/stats', apiv1, apiCtrl.tickets.getTicketStats)
+  router.get("/api/v1/tickets/getaverageclosetimebymonth", apiv1, apiTickets.getAverageCloseTimeByMonth)
+
   router.get('/api/v1/tickets/stats/group/:group', apiv1, apiCtrl.tickets.getTicketStatsForGroup)
   router.get('/api/v1/tickets/stats/user/:user', apiv1, apiCtrl.tickets.getTicketStatsForUser)
   router.get('/api/v1/tickets/stats/:timespan', apiv1, apiCtrl.tickets.getTicketStats)
@@ -115,6 +116,7 @@ module.exports = function (middleware, router, controllers) {
   router.get('/api/v1/tags/limit', apiv1, apiCtrl.tags.getTagsWithLimit)
   router.put('/api/v1/tags/:id', apiv1, isAgentOrAdmin, apiCtrl.tags.updateTag)
   router.delete('/api/v1/tags/:id', apiv1, isAgentOrAdmin, apiCtrl.tags.deleteTag)
+
 
   // Public Tickets
   const checkCaptcha = middleware.checkCaptcha
@@ -167,7 +169,9 @@ module.exports = function (middleware, router, controllers) {
 
   // Reports Generator
   const reportsGenCtrl = apiCtrl.reports.generate
-  const genBaseUrl = '/api/v1/reports/generate/'
+  const apiCtrls = controllers.api.v1; 
+
+ const genBaseUrl = '/api/v1/reports/generate/'
   router.post(genBaseUrl + 'tickets_by_group', apiv1, canUser('reports:create'), reportsGenCtrl.ticketsByGroup)
   router.post(genBaseUrl + 'tickets_by_status', apiv1, canUser('reports:create'), reportsGenCtrl.ticketsByStatus)
   router.post(genBaseUrl + 'tickets_by_priority', apiv1, canUser('reports:create'), reportsGenCtrl.ticketsByPriority)
@@ -176,11 +180,8 @@ module.exports = function (middleware, router, controllers) {
   router.post(genBaseUrl + 'tickets_by_user', apiv1, canUser('reports:create'), reportsGenCtrl.ticketsByUser)
   router.post(genBaseUrl + 'tickets_by_assignee', apiv1, canUser('reports:create'), reportsGenCtrl.ticketsByAssignee)
   router.post(genBaseUrl + 'tickets_by_team', apiv1, canUser('reports:create'), reportsGenCtrl.ticketsByTeam)
-
-   //attachments per month
+ //attachments per month
   router.get('/api/v1/reports/attachments-per-month',apiv1,canUser('reports:create'),apiReports.generate.attachmentsPerMonth)
-
-
   // Settings
   router.get('/api/v1/settings', apiv1, apiCtrl.settings.getSettings)
   router.put('/api/v1/settings', apiv1, isAdmin, apiCtrl.settings.updateSetting)

@@ -2141,7 +2141,7 @@ apiTickets.restoreDeleted = function (req, res) {
 
     return res.json({ success: true })
   })
-}
+};
 apiTickets.getAverageCloseTimeByMonth = async function (req,res)  {
     const Ticket = require('../../../models/ticket');
   try {

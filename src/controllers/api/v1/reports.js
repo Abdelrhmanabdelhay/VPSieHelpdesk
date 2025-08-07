@@ -674,6 +674,9 @@ function processResponse (res, input) {
   })
 }
 
+// ... existing code ...
+// Add at the end of the file, before module.exports
+
 /**
  * @api {get} /api/v1/reports/attachments-per-month Attachments Per Month
  * @apiName attachmentsPerMonth
@@ -714,6 +717,4 @@ function processResponse (res, input) {
     return res.status(500).json({ success: false, error: err.message })
   }
 }
-
-
 module.exports = apiReports
