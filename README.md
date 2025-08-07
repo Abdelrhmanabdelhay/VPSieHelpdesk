@@ -15,88 +15,89 @@ Below are the UI changes made as part of VPSie branding.
   </tr>
 
   <tr>
-    <td align="center">
-        <img src="https://github.com/user-attachments/assets/31b0e162-5fa0-41eb-a991-6b24b9e40ff9" alt="Before Welcome Page" width="400"/>
+        <img src="https://github.com/user-attachments/assets/1a342048-6738-411c-9153-357984a8722c" alt="Before Welcome Page" width="400"/>
       <p><i>Welcome Page</i></p>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/00014f11-1125-4195-a220-a822be762b5e" alt="After Welcome Page" width="400"/>
+      <img src="https://github.com/user-attachments/assets/9437f745-fbc8-4a96-8044-4e3d3e73a536" alt="After Welcome Page" width="400"/>
       <p><i>Welcome Page</i></p>
     </td>
   </tr>
 
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/30414fef-73d4-4ab5-bd57-94bfec086ae8" alt="Before Mongo Db Connection" width="400"/>
+      <img src="https://github.com/user-attachments/assets/58ee3417-96aa-4ea2-9bd9-6c1d075484de" alt="Before Mongo Db Connection" width="400"/>
       <p><i>Mongo Db Connection</i></p>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/b73af7f9-9066-48d1-b912-aa32d45be7e2" alt="After Mongo Db Connection" width="400"/>
+      <img src="https://github.com/user-attachments/assets/2d04bc9c-196d-445c-8661-243fe172879e" alt="After Mongo Db Connection" width="400"/>
       <p><i>Mongo Db Connection</i></p>
     </td>
   </tr>
 
+
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/9c2fa280-2c24-46ec-a568-0783a8a1b80a" alt="Before Restart View" width="400"/>
+      <img src="https://github.com/user-attachments/assets/d6a44012-ce05-4d48-8a95-c341eb93c357" alt="Before Restart View" width="400"/>
       <p><i>Restart View</i></p>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/51f98cc1-6fbf-4b7b-aad1-bfe813869b66" alt="After Restart View" width="400"/>
+      <img src="https://github.com/user-attachments/assets/63b13076-9ae9-4b6a-a96b-4dd665f7bdd8" alt="After Restart View" width="400"/>
       <p><i>Restart View</i></p>
     </td>
+
   </tr>
     <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/71b03179-6a74-46a4-89aa-1e16a5537833" alt="Before Title & Favicon Area" width="400"/>
+      <img src="https://github.com/user-attachments/assets/0b90de72-45eb-49b1-87b4-363ec239a0ab" alt="Before Title & Favicon Area" width="400"/>
       <p><i>Title & Favicon Area</i></p>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/9945782e-4de6-46bd-ac6b-2af06ecbb456" alt="After Title & Favicon Area" width="400"/>
+      <img src="https://github.com/user-attachments/assets/84792626-695c-42ab-b52d-9f316e1a9663" alt="After Title & Favicon Area" width="400"/>
       <p><i>Title & Favicon Area</i></p>
     </td>
   </tr>
       <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/20fedf65-def4-4d18-8766-e5a25393d9ef" alt="Before Login Page" width="400"/>
+      <img src="https://github.com/user-attachments/assets/7defd689-4ecc-462a-85cf-edbd138dfbb2" alt="Before Login Page" width="400"/>
       <p><i>Login Page</i></p>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/b6f802d7-7271-42f0-8ff1-61c1896db097" alt="After Login Page" width="400"/>
+      <img src="https://github.com/user-attachments/assets/27f753f7-a729-485b-b55e-36b59366f46d" alt="After Login Page" width="400"/>
       <p><i>Login Page</i></p>
     </td>
   </tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/aa128957-d31b-4f46-985d-552a93e4990c" alt="Before Dashboard Page" width="400"/>
+      <img src="https://github.com/user-attachments/assets/bb0c3fcb-c157-40e8-920a-83cea19d632f" alt="Before Dashboard Page" width="400"/>
       <p><i>Dashboard Page</i></p>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/2819b8e0-50d4-4b24-946a-820ae5333fef" alt="After Dashboard Page" width="400"/>
+      <img src="https://github.com/user-attachments/assets/fa13cd83-2f01-4e19-8d46-d17dd4942c9d" alt="After Dashboard Page" width="400"/>
       <p><i>Dashboard Page</i></p>
     </td>
     <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/b7c4aad8-748a-4bfe-8427-0f0c913d6201" alt="Before Title & Favicon Area2" width="400"/>
+      <img src="https://github.com/user-attachments/assets/95259be2-e81b-4a54-bb79-71020413b708" alt="Before Title & Favicon Area2" width="400"/>
       <p><i>Title & Favicon Area 2</i></p>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/9daced58-9e6d-4e35-bb67-2a96bcf9cadb" alt="After Title & Favicon Area2" width="400"/>
+      <img src="https://github.com/user-attachments/assets/89764071-8b87-4185-8197-dafc0d40b8d2" alt="After Title & Favicon Area2" width="400"/>
       <p><i>Title & Favicon Area 2</i></p>
     </td>
   </tr>
       <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/1786bd93-a179-4f34-a626-ecc0a97f25ac" alt="Before Settings View" width="400"/>
+      <img src="https://github.com/user-attachments/assets/e89d435a-2548-4a83-928d-e99a276edde0" alt="Before Settings View" width="400"/>
       <p><i>Settings View</i></p>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/07448735-806b-4651-a028-88dfa4274238" alt="After Settings View" width="400"/>
+      <img src="https://github.com/user-attachments/assets/5342cf43-68f8-43b3-b68c-688477bf4691" alt="After Settings View" width="400"/>
       <p><i>Settings View</i></p>
     </td>
   </tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/11f197fb-cf05-4bce-a658-87b410819b9d" alt="Before About Page" width="400"/>
+      <img src="https://github.com/user-attachments/assets/beb5d799-d8ce-4b04-b453-9cca2637b396" alt="Before About Page" width="400"/>
       <p><i>About Page</i></p>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/2f860aa1-d978-4077-8a43-df60daa5f281" alt="After About Page" width="400"/>
+      <img src="https://github.com/user-attachments/assets/f4660422-5dbc-4889-baf7-7c2fcbcae72a" alt="After About Page" width="400"/>
       <p><i>About Page</i></p>
     </td>
   </tr>
