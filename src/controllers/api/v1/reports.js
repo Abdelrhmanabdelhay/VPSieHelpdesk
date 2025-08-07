@@ -674,6 +674,46 @@ function processResponse (res, input) {
   })
 }
 
+/**
+ * @api {get} /api/v1/reports/attachments-per-month Attachments Per Month
+ * @apiName attachmentsPerMonth
+ * @apiDescription Get the count of file attachments uploaded per month
+ * @apiVersion 1.0.0
+ * @apiGroup Reports
+ * @apiHeader {string} accesstoken The access token for the logged in user
+ *
+ * @apiSuccess {object[]} months Array of objects with { month, year, count }
+ */
+ apiReports.generate.attachmentsPerMonth = async function (req, res) {
+  try {
+    const Ticket = require('../../../models/ticket.js')
+    // Aggregate all attachments from all tickets
+    const pipeline = [
+      { $unwind: '$attachments' },
+      { $match: { 'attachments.date': { $exists: true } } },
+      {
+        $group: {
+          _id: {
+            year: { $year: '$attachments.date' },
+            month: { $month: '$attachments.date' }
+          },
+          count: { $sum: 1 }
+        }
+      },
+      { $sort: { '_id.year': 1, '_id.month': 1 } }
+    ];
+    const result =await  Ticket.aggregate(pipeline)
+    // Format result
+    const months = result.map(r => ({
+      year: r._id.year,
+      month: r._id.month,
+      count: r.count
+    }))
+    return res.json({ success: true, months })
+  } catch (err) {
+    return res.status(500).json({ success: false, error: err.message })
+  }
+}
 
 
 module.exports = apiReports

@@ -13,6 +13,7 @@
  */
 
 const packagejson = require('../../../../package')
+const apiReports = require('./reports')
 const apiTickets = require('./tickets')
 
 module.exports = function (middleware, router, controllers) {
@@ -175,6 +176,10 @@ module.exports = function (middleware, router, controllers) {
   router.post(genBaseUrl + 'tickets_by_user', apiv1, canUser('reports:create'), reportsGenCtrl.ticketsByUser)
   router.post(genBaseUrl + 'tickets_by_assignee', apiv1, canUser('reports:create'), reportsGenCtrl.ticketsByAssignee)
   router.post(genBaseUrl + 'tickets_by_team', apiv1, canUser('reports:create'), reportsGenCtrl.ticketsByTeam)
+
+   //attachments per month
+  router.get('/api/v1/reports/attachments-per-month',apiv1,canUser('reports:create'),apiReports.generate.attachmentsPerMonth)
+
 
   // Settings
   router.get('/api/v1/settings', apiv1, apiCtrl.settings.getSettings)
