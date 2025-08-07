@@ -324,4 +324,3 @@ apiTickets.getAverageCloseTimeByMonth = async function (req,res)  {
 }
 
 ```
-](https://github.com/Abdelrhmanabdelhay/VpsieHelpdesk)
