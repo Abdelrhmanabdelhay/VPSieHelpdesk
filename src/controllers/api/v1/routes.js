@@ -13,6 +13,7 @@
  */
 
 const packagejson = require('../../../../package')
+const apiTickets = require('./tickets')
 
 module.exports = function (middleware, router, controllers) {
   // Shorten consts
@@ -55,6 +56,8 @@ module.exports = function (middleware, router, controllers) {
   router.post('/api/v1/tickets/priority/:id/delete', apiv1, isAdmin, apiCtrl.tickets.deletePriority)
   router.get('/api/v1/tickets/priorities', apiv1, apiCtrl.tickets.getPriorities)
   router.put('/api/v1/tickets/priority/:id', apiv1, isAdmin, apiCtrl.tickets.updatePriority)
+  //get average close time by month
+  router.get("/api/v1/tickets/getaverageclosetimebymonth", apiv1,apiTickets.s)
 
   router.post('/api/v1/tickets/status/create', apiv1, isAdmin, apiCtrl.tickets.createStatus)
   router.get('/api/v1/tickets/status', apiv1, apiCtrl.tickets.getStatus)

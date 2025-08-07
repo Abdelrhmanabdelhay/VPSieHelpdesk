@@ -2142,5 +2142,59 @@ apiTickets.restoreDeleted = function (req, res) {
     return res.json({ success: true })
   })
 }
+apiTickets.getAverageCloseTimeByMonth = async function (req,res)  {
+    const Ticket = require('../../../models/ticket');
+  try {
+    const results = await Ticket.aggregate([
+      // Only include tickets that are closed
+      {
+        $match: {
+          closedDate: { $ne: null }
+        }
+      },
+      // Project year, month, and duration in hours
+      {
+        $project: {
+          year: { $year: "$closedDate" },
+          month: { $month: "$closedDate" },
+          durationInHours: {
+            $divide: [{ $subtract: ["$closedDate", "$date"] }, 1000 * 60 * 60]
+          }
+        }
+      },
+      // Group by year/month and calculate average close time
+      {
+        $group: {
+          _id: {
+            year: "$year",
+            month: "$month"
+          },
+          avgCloseTimeInHours: { $avg: "$durationInHours" },
+          count: { $sum: 1 }
+        }
+      },
+      // Sort by year and month
+      {
+        $sort: {
+          "_id.year": 1,
+          "_id.month": 1
+        }
+      }
+    ]);
 
+    // Format output
+    const formatted = results.map(item => ({
+      month: `${item._id.year}-${String(item._id.month).padStart(2, '0')}`,
+      averageTimeInHours: item.avgCloseTimeInHours.toFixed(2),
+      ticketCount: item.count
+    }));
+
+    console.log(formatted);
+   return res.json({ success: true, data: formatted });
+
+  } catch (err) {
+    console.error('Error calculating average close time:', err);
+    throw err;
+  }
+};
 module.exports = apiTickets
