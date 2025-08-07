@@ -189,54 +189,63 @@ function createDirectories (callback) {
   )
 }
 
-function downloadWin32MongoDBTools (callback) {
-  var http = require('http')
-  var os = require('os')
-  var semver = require('semver')
-  var dbVersion = require('../database').db.version || '5.0.6'
-  var fileVersion = semver.major(dbVersion) + '.' + semver.minor(dbVersion)
+const https = require('https')
+const os = require('os')
+const unzipper = require('unzipper')
+const semver = require('semver')
 
-  if (os.platform() === 'win32') {
-    winston.debug('MongoDB version ' + fileVersion + ' detected.')
-    var filename = 'mongodb-tools.' + fileVersion + '-win32x64.zip'
-    var savePath = path.join(__dirname, '../backup/bin/win32/')
-    fs.ensureDirSync(savePath)
-    if (
-      !fs.existsSync(path.join(savePath, 'mongodump.exe')) ||
-      !fs.existsSync(path.join(savePath, 'mongorestore.exe'))
-      // !fs.existsSync(path.join(savePath, 'libeay32.dll')) ||
-      // !fs.existsSync(path.join(savePath, 'ssleay32.dll'))
-    ) {
-      winston.debug('Windows platform detected. Downloading MongoDB Tools [' + filename + ']')
-      fs.emptyDirSync(savePath)
-      var unzipper = require('unzipper')
-      var file = fs.createWriteStream(path.join(savePath, filename))
-      http
-        .get('http://storage.trudesk.io/tools/' + filename, function (response) {
-          response.pipe(file)
-          file.on('finish', function () {
-            file.close()
-          })
-          file.on('close', function () {
-            fs.createReadStream(path.join(savePath, filename))
-              .pipe(unzipper.Extract({ path: savePath }))
-              .on('close', function () {
-                fs.unlink(path.join(savePath, filename), callback)
-              })
-          })
-        })
-        .on('error', function (err) {
-          fs.unlink(path.join(savePath, filename))
-          winston.debug(err)
-          return callback()
-        })
-    } else {
-      return callback()
-    }
-  } else {
+function downloadWin32MongoDBTools(callback) {
+  const dbVersion = require('../database').db.version || '5.0.6'
+  const fileVersion = `${semver.major(dbVersion)}.${semver.minor(dbVersion)}`
+  const savePath = path.join(__dirname, '../backup/bin/win32/')
+  const filename = `mongodb-tools.${fileVersion}-win32x64.zip`
+  const zipPath = path.join(savePath, filename)
+  const fileUrl = `https://storage.trudesk.io/tools/${filename}`
+
+  if (os.platform() !== 'win32') return callback()
+
+  winston.debug(`MongoDB version ${fileVersion} detected.`)
+
+  const mongodump = path.join(savePath, 'mongodump.exe')
+  const mongorestore = path.join(savePath, 'mongorestore.exe')
+
+  if (fs.existsSync(mongodump) && fs.existsSync(mongorestore)) {
     return callback()
   }
+
+  winston.debug(`Windows platform detected. Downloading MongoDB Tools [${filename}]`)
+  fs.ensureDirSync(savePath)
+  fs.emptyDirSync(savePath)
+
+  const file = fs.createWriteStream(zipPath)
+
+  https.get(fileUrl, (response) => {
+    if (response.statusCode !== 200) {
+      winston.error(`Failed to download MongoDB Tools: ${response.statusCode} - ${fileUrl}`)
+      return callback(new Error(`Download failed: ${response.statusCode}`))
+    }
+
+    response.pipe(file)
+
+    file.on('finish', () => {
+      file.close(() => {
+        fs.createReadStream(zipPath)
+          .pipe(unzipper.Extract({ path: savePath }))
+          .on('close', () => {
+            fs.unlink(zipPath, callback)
+          })
+          .on('error', (err) => {
+            winston.error('Failed to unzip MongoDB Tools:', err)
+            return callback(err)
+          })
+      })
+    })
+  }).on('error', (err) => {
+    winston.error('HTTPS download failed:', err)
+    fs.unlink(zipPath, () => callback(err))
+  })
 }
+
 
 function timezoneDefault (callback) {
   SettingsSchema.getSettingByName('gen:timezone', function (err, setting) {
