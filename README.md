@@ -13,8 +13,10 @@ Below are the UI changes made as part of VPSie branding.
     <th style="text-align:center">Before</th>
     <th style="text-align:center">After</th>
   </tr>
+
   <tr>
-     <img src="https://github.com/user-attachments/assets/1a342048-6738-411c-9153-357984a8722c" alt="Before Welcome Page" width="400"/>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/1a342048-6738-411c-9153-357984a8722c" alt="Before Welcome Page" width="400"/>
       <p><i>Welcome Page</i></p>
     </td>
     <td align="center">
@@ -22,6 +24,7 @@ Below are the UI changes made as part of VPSie branding.
       <p><i>Welcome Page</i></p>
     </td>
   </tr>
+
   <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/58ee3417-96aa-4ea2-9bd9-6c1d075484de" alt="Before Mongo Db Connection" width="400"/>
@@ -32,6 +35,7 @@ Below are the UI changes made as part of VPSie branding.
       <p><i>Mongo Db Connection</i></p>
     </td>
   </tr>
+
   <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/d6a44012-ce05-4d48-8a95-c341eb93c357" alt="Before Restart View" width="400"/>
@@ -42,7 +46,8 @@ Below are the UI changes made as part of VPSie branding.
       <p><i>Restart View</i></p>
     </td>
   </tr>
-    <tr>
+
+  <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/0b90de72-45eb-49b1-87b4-363ec239a0ab" alt="Before Title & Favicon Area" width="400"/>
       <p><i>Title & Favicon Area</i></p>
@@ -52,7 +57,8 @@ Below are the UI changes made as part of VPSie branding.
       <p><i>Title & Favicon Area</i></p>
     </td>
   </tr>
-      <tr>
+
+  <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/7defd689-4ecc-462a-85cf-edbd138dfbb2" alt="Before Login Page" width="400"/>
       <p><i>Login Page</i></p>
@@ -62,6 +68,8 @@ Below are the UI changes made as part of VPSie branding.
       <p><i>Login Page</i></p>
     </td>
   </tr>
+
+  <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/bb0c3fcb-c157-40e8-920a-83cea19d632f" alt="Before Dashboard Page" width="400"/>
       <p><i>Dashboard Page</i></p>
@@ -70,33 +78,42 @@ Below are the UI changes made as part of VPSie branding.
       <img src="https://github.com/user-attachments/assets/fa13cd83-2f01-4e19-8d46-d17dd4942c9d" alt="After Dashboard Page" width="400"/>
       <p><i>Dashboard Page</i></p>
     </td>
-    <tr>
+  </tr>
+
+  <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/95259be2-e81b-4a54-bb79-71020413b708" alt="Before Title & Favicon Area2" width="400"/>
       <p><i>Title & Favicon Area 2</i></p>
+    </td>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/89764071-8b87-4185-8197-dafc0d40b8d2" alt="After Title & Favicon Area2" width="400"/>
       <p><i>Title & Favicon Area 2</i></p>
     </td>
   </tr>
-      <tr>
+
+  <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/e89d435a-2548-4a83-928d-e99a276edde0" alt="Before Settings View" width="400"/>
       <p><i>Settings View</i></p>
+    </td>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/5342cf43-68f8-43b3-b68c-688477bf4691" alt="After Settings View" width="400"/>
       <p><i>Settings View</i></p>
     </td>
   </tr>
+
+  <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/beb5d799-d8ce-4b04-b453-9cca2637b396" alt="Before About Page" width="400"/>
       <p><i>About Page</i></p>
+    </td>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/f4660422-5dbc-4889-baf7-7c2fcbcae72a" alt="After About Page" width="400"/>
       <p><i>About Page</i></p>
     </td>
   </tr>
 </table>
+
 
 #### Requirements
 - NodeJS 16
