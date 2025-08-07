@@ -1,4 +1,4 @@
-[<h1 align="center">
+<h1 align="center">
 <a href=""><img src="https://vpsie.com/wp-content/uploads/2021/08/white-logo-web-save.png" width="300" /></a>
 </h1>
 
@@ -13,9 +13,8 @@ Below are the UI changes made as part of VPSie branding.
     <th style="text-align:center">Before</th>
     <th style="text-align:center">After</th>
   </tr>
-
   <tr>
-        <img src="https://github.com/user-attachments/assets/1a342048-6738-411c-9153-357984a8722c" alt="Before Welcome Page" width="400"/>
+     <img src="https://github.com/user-attachments/assets/1a342048-6738-411c-9153-357984a8722c" alt="Before Welcome Page" width="400"/>
       <p><i>Welcome Page</i></p>
     </td>
     <td align="center">
@@ -23,7 +22,6 @@ Below are the UI changes made as part of VPSie branding.
       <p><i>Welcome Page</i></p>
     </td>
   </tr>
-
   <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/58ee3417-96aa-4ea2-9bd9-6c1d075484de" alt="Before Mongo Db Connection" width="400"/>
@@ -34,8 +32,6 @@ Below are the UI changes made as part of VPSie branding.
       <p><i>Mongo Db Connection</i></p>
     </td>
   </tr>
-
-
   <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/d6a44012-ce05-4d48-8a95-c341eb93c357" alt="Before Restart View" width="400"/>
@@ -45,7 +41,6 @@ Below are the UI changes made as part of VPSie branding.
       <img src="https://github.com/user-attachments/assets/63b13076-9ae9-4b6a-a96b-4dd665f7bdd8" alt="After Restart View" width="400"/>
       <p><i>Restart View</i></p>
     </td>
-
   </tr>
     <tr>
     <td align="center">
